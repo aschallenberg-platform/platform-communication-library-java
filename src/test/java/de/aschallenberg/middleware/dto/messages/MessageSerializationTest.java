@@ -9,7 +9,6 @@ import de.aschallenberg.middleware.messages.MessageFactory;
 import de.aschallenberg.middleware.messages.Meta;
 import de.aschallenberg.middleware.messages.Payload;
 import de.aschallenberg.middleware.messages.payloads.*;
-import de.aschallenberg.middleware.messages.payloads.empty.*;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import de.aschallenberg.middleware.messages.payloads.*;
-import de.aschallenberg.middleware.messages.payloads.empty.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

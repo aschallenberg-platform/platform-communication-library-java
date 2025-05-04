@@ -2,7 +2,6 @@ package de.aschallenberg.middleware.messages;
 
 import de.aschallenberg.middleware.dto.BotData;
 import de.aschallenberg.middleware.messages.payloads.*;
-import de.aschallenberg.middleware.messages.payloads.empty.*;
 import lombok.NonNull;
 import lombok.experimental.UtilityClass;
 
