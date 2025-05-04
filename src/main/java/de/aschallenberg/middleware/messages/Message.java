@@ -16,7 +16,6 @@ public class Message {
 	private Meta meta;
 
 	private String payloadType;
-
 	@JsonTypeInfo(
 			use = JsonTypeInfo.Id.NAME,
 			include = JsonTypeInfo.As.EXTERNAL_PROPERTY,  // wichtig: nimmt Typ aus dem "type"-Feld
@@ -32,6 +31,7 @@ public class Message {
 			@JsonSubTypes.Type(value = LobbyStartPayload.class, name = MessageTypes.LOBBY_START),
 			@JsonSubTypes.Type(value = LobbyInterruptPayload.class, name = MessageTypes.LOBBY_INTERRUPT),
 			@JsonSubTypes.Type(value = LobbyFinishedPayload.class, name = MessageTypes.LOBBY_FINISHED),
+			@JsonSubTypes.Type(value = GameStartForBotsPayload.class, name = MessageTypes.GAME_START_FOR_BOTS),
 			@JsonSubTypes.Type(value = GameStartPayload.class, name = MessageTypes.GAME_START),
 			@JsonSubTypes.Type(value = GameInterruptPayload.class, name = MessageTypes.GAME_INTERRUPT),
 			@JsonSubTypes.Type(value = GameFinishedPayload.class, name = MessageTypes.GAME_FINISHED),
@@ -43,6 +43,7 @@ public class Message {
 
 	})
 	private Payload payload;
+
 
 	@JsonCreator
 	public Message(

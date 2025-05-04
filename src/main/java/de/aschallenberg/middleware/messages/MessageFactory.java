@@ -42,6 +42,7 @@ public class MessageFactory {
 			case LobbyStartPayload pl -> message.setPayloadType(MessageTypes.LOBBY_START);
 			case LobbyInterruptPayload pl -> message.setPayloadType(MessageTypes.LOBBY_INTERRUPT);
 			case LobbyFinishedPayload pl -> message.setPayloadType(MessageTypes.LOBBY_FINISHED);
+			case GameStartForBotsPayload pl -> message.setPayloadType(MessageTypes.GAME_START_FOR_BOTS);
 			case GameStartPayload pl -> message.setPayloadType(MessageTypes.GAME_START);
 			case GameInterruptPayload pl -> message.setPayloadType(MessageTypes.GAME_INTERRUPT);
 			case GameFinishedPayload pl -> message.setPayloadType(MessageTypes.GAME_FINISHED);

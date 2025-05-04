@@ -120,6 +120,7 @@ public class MessageSerializationTest {
 				new LobbyStartPayload(),
 				new LobbyInterruptPayload(),
 				new LobbyFinishedPayload(),
+				new GameStartForBotsPayload(gameData, botData),
 				new GameStartPayload(gameData),
 				new GameInterruptPayload(),
 				new GameFinishedPayload(scores),

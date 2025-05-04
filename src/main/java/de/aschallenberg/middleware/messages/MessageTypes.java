@@ -14,6 +14,7 @@ public class MessageTypes {
 	public static final String LOBBY_INTERRUPT = "LOBBY_INTERRUPT";
 	public static final String LOBBY_FINISHED = "LOBBY_FINISHED";
 	public static final String GAME_START = "GAME_START";
+	public static final String GAME_START_FOR_BOTS = "GAME_START_FOR_BOTS";
 	public static final String GAME_INTERRUPT = "GAME_INTERRUPT";
 	public static final String GAME_FINISHED = "GAME_FINISHED";
 	public static final String STAGE_START = "STAGE_START";
