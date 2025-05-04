@@ -124,7 +124,7 @@ public class MessageSerializationTest {
 				new GameInterruptPayload(),
 				new GameFinishedPayload(scores),
 				new StageStartPayload(),
-				new StageFinishedPayload(),
+				new StageFinishedPayload(true),
 				new GameUpdatePayload<>("Some game update"),
 				new MovePayload<>("Some move"),
 				new DisqualifyPayload(botData)

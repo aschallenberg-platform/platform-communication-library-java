@@ -15,7 +15,7 @@ class GameDataTest {
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 
 	@Test
-	public void testToJson_withValidData_shouldSerializeCorrectly() throws JsonProcessingException {
+	void testToJson_withValidData_shouldSerializeCorrectly() throws JsonProcessingException {
 		GameData data = GameData.builder()
 				.name("TestName")
 				.module("TestModule")
@@ -32,16 +32,23 @@ class GameDataTest {
 	}
 
 	@Test
-	public void testFromJson_withValidJson_shouldDeserializeCorrectly() throws JsonProcessingException {
+	void testFromJson_withValidJson_shouldDeserializeCorrectly() throws JsonProcessingException {
 		String json = """
 		{
 		  "name": "TestGame",
 		  "module": "TestMod",
 		  "version": "1.2",
-		  "settings": "{\\"difficulty\\":\\"hard\\"}",
-		  "bots": "[{\\"name\\":\\"BotA\\",\\"level\\":\\"Hard\\"}]"
+		  "settings": {
+		    "difficulty": "hard"
+		  },
+		  "bots": [
+		    {
+		      "name": "BotA",
+		      "ownerName": "OwnerA"
+		    }
+		  ]
 		}
-	""";
+		""";
 
 		GameData data = MAPPER.readValue(json, GameData.class);
 		assertEquals("TestGame", data.getName());
@@ -51,7 +58,7 @@ class GameDataTest {
 	}
 
 	@Test
-	public void testToJson_withNullValues_shouldNotThrow() throws JsonProcessingException {
+	void testToJson_withNullValues_shouldNotThrow() throws JsonProcessingException {
 		GameData data = GameData.builder()
 				.name(null)
 				.module(null)
@@ -68,14 +75,14 @@ class GameDataTest {
 	}
 
 	@Test
-	public void testFromJson_withNullFields_shouldNotThrow() throws JsonProcessingException {
+	void testFromJson_withNullFields_shouldNotThrow() throws JsonProcessingException {
 		String json = """
 		{
 		  "name": null,
 		  "module": null,
 		  "version": null,
-		  "settings": "{}",
-		  "bots": "[]"
+		  "settings": {},
+		  "bots": []
 		}
 	""";
 
@@ -88,7 +95,7 @@ class GameDataTest {
 	}
 
 	@Test
-	public void testToJson_withEmptyCollections_shouldSerializeCorrectly() throws JsonProcessingException {
+	void testToJson_withEmptyCollections_shouldSerializeCorrectly() throws JsonProcessingException {
 		GameData data = GameData.builder()
 				.name("Test")
 				.module("TestMod")
@@ -98,12 +105,12 @@ class GameDataTest {
 				.build();
 
 		String json = MAPPER.writeValueAsString(data);
-		assertTrue(json.contains("\"settings\":\"{}\""));
-		assertTrue(json.contains("\"bots\":\"[]\""));
+		assertTrue(json.contains("\"settings\":{}"));
+		assertTrue(json.contains("\"bots\":[]"));
 	}
 
 	@Test
-	public void testRoundTripSerialization_shouldPreserveData() throws JsonProcessingException {
+	void testRoundTripSerialization_shouldPreserveData() throws JsonProcessingException {
 		Map<String, String> settings = new HashMap<>();
 		settings.put("speed", "fast");
 
