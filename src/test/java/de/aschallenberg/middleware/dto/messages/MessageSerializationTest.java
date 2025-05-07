@@ -127,7 +127,8 @@ public class MessageSerializationTest {
 				new StageFinishedPayload(true),
 				new GameUpdatePayload<>("Some game update"),
 				new MovePayload<>("Some move"),
-				new DisqualifyPayload(botData)
+				new DisqualifyPayload(botData),
+				new TimeoutPayload(botData)
 		);
 	}
 }

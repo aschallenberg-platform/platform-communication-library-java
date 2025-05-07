@@ -50,6 +50,7 @@ public class MessageFactory {
 			case GameUpdatePayload<?> pl -> message.setPayloadType(MessageTypes.GAME_UPDATE);
 			case MovePayload<?> pl -> message.setPayloadType(MessageTypes.MOVE);
 			case DisqualifyPayload pl -> message.setPayloadType(MessageTypes.DISQUALIFY);
+			case TimeoutPayload pl -> message.setPayloadType(MessageTypes.TIMEOUT);
 			default -> throw new IllegalStateException("Unexpected payload type: " + payload);
 		}
 

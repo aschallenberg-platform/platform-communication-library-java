@@ -22,4 +22,5 @@ public class MessageTypes {
 	public static final String GAME_UPDATE = "GAME_UPDATE";
 	public static final String MOVE = "MOVE";
 	public static final String DISQUALIFY = "DISQUALIFY";
+	public static final String TIMEOUT = "TIMEOUT";
 }

@@ -38,7 +38,8 @@ public class Message {
 			@JsonSubTypes.Type(value = StageFinishedPayload.class, name = MessageTypes.STAGE_FINISHED),
 			@JsonSubTypes.Type(value = GameUpdatePayload.class, name = MessageTypes.GAME_UPDATE),
 			@JsonSubTypes.Type(value = MovePayload.class, name = MessageTypes.MOVE),
-			@JsonSubTypes.Type(value = DisqualifyPayload.class, name = MessageTypes.DISQUALIFY)
+			@JsonSubTypes.Type(value = DisqualifyPayload.class, name = MessageTypes.DISQUALIFY),
+			@JsonSubTypes.Type(value = TimeoutPayload.class, name = MessageTypes.TIMEOUT)
 
 	})
 	private Payload payload;
