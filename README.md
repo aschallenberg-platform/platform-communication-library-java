@@ -1,1 +1,1 @@
-# middleware-java
+# platform-communication-library-java
