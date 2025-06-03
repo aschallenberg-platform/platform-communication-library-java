@@ -18,7 +18,7 @@
         <repository>
             <id>github</id>
             <name>GitHub aschallenberg Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/aschallenberg-platform/middleware-java</url>
+            <url>https://maven.pkg.github.com/aschallenberg-platform/platform-communication-library-java</url>
         </repository>
     </distributionManagement>
 
